@@ -1,13 +1,13 @@
 interface <%= name %>
 {
-  <%- options.each do |k,v| -%>
+  <%- options.sort.each do |k,v| -%>
   <%= k %> <%= v %>;
   <%- end -%>
 
-  <%- prefixes.each do |pfx,popts| -%>
+  <%- prefixes.sort.each do |pfx,popts| -%>
   prefix <%= pfx %>
   {
-    <%- popts.each do |k,v| -%>
+    <%- popts.sort.each do |k,v| -%>
     <%= k -%> <%= v %>;
     <%- end -%>
   };

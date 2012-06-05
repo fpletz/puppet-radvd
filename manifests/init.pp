@@ -1,8 +1,18 @@
 class radvd (
-  $package_ensure = 'present'
+  $ensure = 'present'
 ) {
   include radvd::params
   include concat::setup
+
+  $package_ensure = $ensure ? {
+    present => 'present',
+    absent  => 'absent',
+  }
+
+  $service_ensure = $ensure ? {
+    present => 'running',
+    absent  => 'stopped'
+  }
 
   package { 'radvd':
     ensure => $package_ensure,

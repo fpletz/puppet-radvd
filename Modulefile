@@ -1,0 +1,10 @@
+name    'puppet-radvd'
+version '0.1.0'
+source  'https://github.com/fpletz/puppet-radvd.git'
+author  'fpletz'
+license 'WTFPL'
+summary 'Puppet radvd management module'
+description 'UNKONWN'
+project_page 'https://github.com/fpletz/puppet/radvd'
+
+dependency 'ripienaar/concat', '>= 0.1.0'

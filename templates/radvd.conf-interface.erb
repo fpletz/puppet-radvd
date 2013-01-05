@@ -12,4 +12,22 @@ interface <%= name %>
     <%- end -%>
   };
   <%- end -%>
+
+  <%- rdnss.sort.each do |dns,popts| -%>
+  RDNSS <%= dns %>
+  {
+    <%- popts.sort.each do |k,v| -%>
+    <%= k -%> <%= v %>;
+    <%- end -%>
+  };
+  <%- end -%>
+
+  <%- dnssl.sort.each do |domain,popts| -%>
+  DNSSL <%= domain %>
+  {
+    <%- popts.sort.each do |k,v| -%>
+    <%= k -%> <%= v %>;
+    <%- end -%>
+  };
+  <%- end -%>
 };

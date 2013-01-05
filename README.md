@@ -19,6 +19,16 @@ Unix-like operating system that radvd and puppet support.
           'AdvAutonomous' => 'on',
         },
       },
+      rdnss => {
+        '2001:0DB8:2342:babe::1' => {
+          'AdvRDNSSLifetime' => 30,
+        },
+      },
+      dnssl => {
+        'branch.example.com example.com' => {
+          'AdvDNSSLLifetime' => 30,
+        },
+      },
     }
 
 ## Contributions welcome!

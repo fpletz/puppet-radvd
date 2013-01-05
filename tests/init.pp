@@ -1,5 +1,14 @@
 node default {
   radvd::interface { 'eth0':
+    options  => {
+      'AdvSendAdvert' => 'on',
+    },
+    prefixes => {
+      '2001:0DB8:2342:babe::/64' => {},
+    },
+  }
+
+  radvd::interface { 'eth1':
     options => {
       'AdvSendAdvert'     => 'on',
       'MinRtrAdvInterval' => 10,

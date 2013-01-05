@@ -1,5 +1,5 @@
-name    'puppet-radvd'
-version '0.2.0'
+name    'fpletz-radvd'
+version '0.2.1'
 source  'https://github.com/fpletz/puppet-radvd.git'
 author  'fpletz'
 license 'WTFPL'

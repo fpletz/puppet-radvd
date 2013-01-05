@@ -1,13 +1,29 @@
-# Easy radvd module for Puppet
+# Simple radvd module for Puppet
 
-This is a quick and dirty module for installing and configuring a radvd
+This is a simple module for installing and configuring a radvd
 daemon to announce IPv6 prefixes on an interface. It should work on any
-Unix-like operating system that radvd and puppet support.
+Unix-like operating system that is supported by both radvd and puppet.
 
-## Example
+## Current Status
 
-    include radvd
+As of now, all definitions and options that are available in radvd's
+config file should be supported. Please file a bug if you encounter
+problems.
+
+## Simple Example
+
     radvd::interface { 'eth0':
+      options  => {
+        'AdvSendAdvert' => 'on',
+      },
+      prefixes => {
+        '2001:0DB8:2342:babe::/64' => {},
+      },
+    }
+
+## Advanced Example
+
+    radvd::interface { 'eth1':
       options => {
         'AdvSendAdvert'     => 'on',
         'MinRtrAdvInterval' => 10,
@@ -29,7 +45,19 @@ Unix-like operating system that radvd and puppet support.
           'AdvDNSSLLifetime' => 30,
         },
       },
+      routes => {
+        '2001:0DB8:2342:ccc::/64' => {},
+      },
+      clients => [
+        'fe80::21f:16ff:fe06:3aab',
+        'fe80::21d:72ff:fe96:aaff',
+      ],
     }
+
+## TODO
+
+ * Code Documentation
+ * Spec Tests
 
 ## Contributions welcome!
 

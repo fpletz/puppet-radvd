@@ -2,7 +2,7 @@ class radvd (
   $ensure = 'present'
 ) {
   include radvd::params
-  include concat::setup
+  include radvd::config
 
   $package_ensure = $ensure ? {
     present => 'present',
@@ -19,14 +19,7 @@ class radvd (
   }
 
   service { 'radvd':
-    ensure => running,
-  }
-
-  concat { $radvd::params::conffile:
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+    ensure  => $service_ensure,
     require => Package['radvd'],
-    notify  => Service['radvd'],
   }
 }

@@ -1,6 +1,4 @@
 node default {
-  include radvd
-
   radvd::interface { 'eth0':
     options => {
       'AdvSendAdvert'     => 'on',

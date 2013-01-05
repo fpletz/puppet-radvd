@@ -39,4 +39,12 @@ interface <%= name %>
     <%- end -%>
   };
   <%- end -%>
+
+  <%- if not clients.nil? and not clients.empty? -%>
+  clients {
+    <%- clients.sort.each do |client| -%>
+    <%= client %>;
+    <%- end -%>
+  };
+  <%- end -%>
 };

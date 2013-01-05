@@ -26,5 +26,9 @@ node default {
     routes => {
       '2001:0DB8:2342:ccc::/64' => {},
     },
+    clients => [
+      'fe80::21f:16ff:fe06:3aab',
+      'fe80::21d:72ff:fe96:aaff',
+    ],
   }
 }

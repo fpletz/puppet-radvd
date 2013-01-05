@@ -5,7 +5,7 @@ class radvd (
   include radvd::config
 
   $package_ensure = $ensure ? {
-    present => 'present',
+    present => 'latest',
     absent  => 'absent',
   }
 

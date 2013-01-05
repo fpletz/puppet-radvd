@@ -1,6 +1,8 @@
 define radvd::interface (
   $options={},
-  $prefixes={}
+  $prefixes={},
+  $rdnss={},
+  $dnssl={},
 ) {
   concat::fragment { "radvd.conf-interface-${name}":
     target  => $radvd::params::conffile,

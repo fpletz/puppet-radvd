@@ -30,4 +30,13 @@ interface <%= name %>
     <%- end -%>
   };
   <%- end -%>
+
+  <%- routes.sort.each do |prefix,popts| -%>
+  route <%= prefix %>
+  {
+    <%- popts.sort.each do |k,v| -%>
+    <%= k -%> <%= v %>;
+    <%- end -%>
+  };
+  <%- end -%>
 };

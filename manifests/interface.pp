@@ -3,6 +3,7 @@ define radvd::interface (
   $prefixes={},
   $rdnss={},
   $dnssl={},
+  $routes={},
 ) {
   concat::fragment { "radvd.conf-interface-${name}":
     target  => $radvd::params::conffile,

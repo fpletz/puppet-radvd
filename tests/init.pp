@@ -9,7 +9,7 @@ node default {
   }
 
   radvd::interface { 'eth1':
-    options => {
+    options  => {
       'AdvSendAdvert'     => 'on',
       'MinRtrAdvInterval' => 10,
       'MaxRtrAdvInterval' => 30,
@@ -20,20 +20,20 @@ node default {
         'AdvAutonomous' => 'on',
       },
     },
-    rdnss => {
+    rdnss    => {
       '2001:0DB8:2342:babe::1' => {
         'AdvRDNSSLifetime' => 30,
       },
     },
-    dnssl => {
+    dnssl    => {
       'branch.example.com example.com' => {
         'AdvDNSSLLifetime' => 30,
       },
     },
-    routes => {
+    routes   => {
       '2001:0DB8:2342:ccc::/64' => {},
     },
-    clients => [
+    clients  => [
       'fe80::21f:16ff:fe06:3aab',
       'fe80::21d:72ff:fe96:aaff',
     ],

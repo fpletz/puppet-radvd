@@ -1,13 +1,8 @@
 class radvd::config {
-  include radvd::params
-  include concat::setup
-  include radvd
-
-  concat { $radvd::params::conffile:
+  concat {$radvd::conffile:
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    require => Package['radvd'],
-    notify  => Service['radvd'],
   }
+  create_resources(radvd::interface, $radvd::interfaces)
 }

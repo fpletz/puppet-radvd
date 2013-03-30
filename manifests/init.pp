@@ -1,25 +1,17 @@
 class radvd (
-  $ensure = 'present'
+  $version = 'present',
+  $interfaces = {},
+  $enable = true,
+  $start = true,
+  $conffile = '/etc/radvd.conf',
 ) {
-  include radvd::params
-  include radvd::config
+  class{'radvd::install': }
+  class{'radvd::config': }
+  class{'radvd::service': }
 
-  $package_ensure = $ensure ? {
-    present => 'latest',
-    absent  => 'absent',
-  }
+  Class['radvd::install'] -> Class['radvd::config']
+  Class['radvd::config'] ~> Class['radvd::service']
+  Radvd::Interface <| |> ~> Class['radvd::service']
+  Class['radvd::service'] -> Class['radvd']
 
-  $service_ensure = $ensure ? {
-    present => 'running',
-    absent  => 'stopped'
-  }
-
-  package { 'radvd':
-    ensure => $package_ensure,
-  }
-
-  service { 'radvd':
-    ensure  => $service_ensure,
-    require => Package['radvd'],
-  }
 }

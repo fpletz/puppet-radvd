@@ -9,9 +9,15 @@ class radvd (
   class{'radvd::config': }
   class{'radvd::service': }
 
-  Class['radvd::install'] -> Class['radvd::config']
-  Class['radvd::config'] ~> Class['radvd::service']
-  Radvd::Interface <| |> ~> Class['radvd::service']
-  Class['radvd::service'] -> Class['radvd']
+  Class['radvd::install'] ->
+  Class['radvd::config'] ~>
+  Class['radvd::service']
+
+  Class['radvd::install'] ->
+  Radvd::Interface <| |> ~>
+  Class['radvd::service']
+
+  Class['radvd::service'] ->
+  Class['radvd']
 
 }

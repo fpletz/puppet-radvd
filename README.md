@@ -12,6 +12,22 @@ problems.
 
 ## Simple Example
 
+    class {'radvd':
+      interfaces => {
+        'eth0' => {
+          options  => {
+            'AdvSendAdvert' => 'on',
+          },
+          prefixes => {
+            '2001:0DB8:2342:babe::/64' => {},
+          },
+        },
+      },
+    }
+
+Or
+
+    include 'radvd'
     radvd::interface { 'eth0':
       options  => {
         'AdvSendAdvert' => 'on',

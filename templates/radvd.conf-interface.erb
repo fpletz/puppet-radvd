@@ -1,50 +1,51 @@
 interface <%= name %>
 {
-  <%- options.sort.each do |k,v| -%>
+  <%- @options.sort.each do |k,v| -%>
   <%= k %> <%= v %>;
   <%- end -%>
 
-  <%- prefixes.sort.each do |pfx,popts| -%>
+  <%- @prefixes.sort.each do |pfx,popts| -%>
   prefix <%= pfx %>
   {
     <%- popts.sort.each do |k,v| -%>
     <%= k -%> <%= v %>;
     <%- end -%>
   };
-  <%- end -%>
 
-  <%- rdnss.sort.each do |dns,popts| -%>
+  <%- end -%>
+  <%- @rdnss.sort.each do |dns,popts| -%>
   RDNSS <%= dns %>
   {
     <%- popts.sort.each do |k,v| -%>
     <%= k -%> <%= v %>;
     <%- end -%>
   };
-  <%- end -%>
 
-  <%- dnssl.sort.each do |domain,popts| -%>
+  <%- end -%>
+  <%- @dnssl.sort.each do |domain,popts| -%>
   DNSSL <%= domain %>
   {
     <%- popts.sort.each do |k,v| -%>
     <%= k -%> <%= v %>;
     <%- end -%>
   };
-  <%- end -%>
 
-  <%- routes.sort.each do |prefix,popts| -%>
+  <%- end -%>
+  <%- @routes.sort.each do |prefix,popts| -%>
   route <%= prefix %>
   {
     <%- popts.sort.each do |k,v| -%>
     <%= k -%> <%= v %>;
     <%- end -%>
   };
-  <%- end -%>
 
-  <%- if not clients.nil? and not clients.empty? -%>
+  <%- end -%>
+  <%- if @clients and not @clients.empty? -%>
   clients {
-    <%- clients.sort.each do |client| -%>
+    <%- @clients.sort.each do |client| -%>
     <%= client %>;
     <%- end -%>
   };
+
   <%- end -%>
 };

@@ -12,6 +12,7 @@ problems.
 
 ## Simple Example
 
+```puppet
     class {'radvd':
       interfaces => {
         'eth0' => {
@@ -19,26 +20,30 @@ problems.
             'AdvSendAdvert' => 'on',
           },
           prefixes => {
-            '2001:0DB8:2342:babe::/64' => {},
+            '2001:0DB8:2342:cafe::/64' => {},
           },
         },
       },
     }
+```
 
 Or
 
+```puppet
     include 'radvd'
     radvd::interface { 'eth0':
       options  => {
         'AdvSendAdvert' => 'on',
       },
       prefixes => {
-        '2001:0DB8:2342:babe::/64' => {},
+        '2001:0DB8:2342:cafe::/64' => {},
       },
     }
+```
 
 ## Advanced Example
 
+```puppet
     radvd::interface { 'eth1':
       options => {
         'AdvSendAdvert'     => 'on',
@@ -46,13 +51,13 @@ Or
         'MaxRtrAdvInterval' => 30,
       },
       prefixes => {
-        '2001:0DB8:2342:babe::/64' => {
+        '2001:0DB8:2342:cafe::/64' => {
           'AdvOnLink'     => 'on',
           'AdvAutonomous' => 'on',
         },
       },
       rdnss => {
-        '2001:0DB8:2342:babe::1' => {
+        '2001:0DB8:2342:cafe::1' => {
           'AdvRDNSSLifetime' => 30,
         },
       },
@@ -69,6 +74,7 @@ Or
         'fe80::21d:72ff:fe96:aaff',
       ],
     }
+```
 
 ## TODO
 

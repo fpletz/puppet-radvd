@@ -4,7 +4,7 @@ node default {
       'AdvSendAdvert' => 'on',
     },
     prefixes => {
-      '2001:0DB8:2342:babe::/64' => {},
+      '2001:0DB8:2342:cafe::/64' => {},
     },
   }
 
@@ -15,13 +15,13 @@ node default {
       'MaxRtrAdvInterval' => 30,
     },
     prefixes => {
-      '2001:0DB8:2342:babe::/64' => {
+      '2001:0DB8:2342:cafe::/64' => {
         'AdvOnLink'     => 'on',
         'AdvAutonomous' => 'on',
       },
     },
     rdnss    => {
-      '2001:0DB8:2342:babe::1' => {
+      '2001:0DB8:2342:cafe::1' => {
         'AdvRDNSSLifetime' => 30,
       },
     },

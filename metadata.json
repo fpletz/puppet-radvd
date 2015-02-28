@@ -1,0 +1,14 @@
+{
+  "name": "fpletz-radvd",
+  "version": "0.3.0",
+  "author": "fpletz",
+  "summary": "Simple Puppet radvd management module",
+  "license": "WTFPL",
+  "source": "https://github.com/fpletz/puppet-radvd.git",
+  "project_page": "https://github.com/fpletz/puppet/radvd",
+  "issues_url": "https://github.com/fpletz/puppet-radvd/issues",
+  "description": "UNKONWN",
+  "dependencies": [
+    {"name":"ripienaar/concat","version_requirement":">= 0.1.0"}
+  ]
+}

@@ -5,10 +5,21 @@
   "summary": "Simple Puppet radvd management module",
   "license": "WTFPL",
   "source": "https://github.com/fpletz/puppet-radvd.git",
-  "project_page": "https://github.com/fpletz/puppet/radvd",
+  "project_page": "https://github.com/fpletz/puppet-radvd",
   "issues_url": "https://github.com/fpletz/puppet-radvd/issues",
-  "description": "UNKONWN",
+  "description": "Simple Puppet radvd management module",
   "dependencies": [
     {"name":"ripienaar/concat","version_requirement":">= 0.1.0"}
+  ],
+  "requirements": [
+    { "name": "puppet", "version_requirement": "3.x" },
+    { "name": "pe", "version_requirement": "3.x" }
+  ],
+  "operatingsystem_support": [
+    { "operatingsystem": "Ubuntu" },
+    { "operatingsystem": "Debian" },
+    { "operatingsystem": "RedHat" },
+    { "operatingsystem": "CentOS" },
+    { "operatingsystem": "SLES" }
   ]
 }

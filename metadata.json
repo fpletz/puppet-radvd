@@ -1,6 +1,6 @@
 {
   "name": "fpletz-radvd",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "author": "fpletz",
   "summary": "Simple Puppet radvd management module",
   "license": "WTFPL",

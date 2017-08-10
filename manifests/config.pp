@@ -4,5 +4,10 @@ class radvd::config {
     group   => 'root',
     mode    => '0644',
   }
+  concat::fragment { '01-puppet-header':
+    target  => $radvd::conffile,
+    content => "# This file is managed by Puppet. DO NOT EDIT.\n",
+    order   => '01',
+  }
   create_resources(radvd::interface, $radvd::interfaces)
 }

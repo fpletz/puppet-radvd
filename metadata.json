@@ -5,7 +5,7 @@
   "summary": "Simple Puppet radvd management module",
   "license": "WTFPL",
   "source": "https://github.com/fpletz/puppet-radvd.git",
-  "project_page": "https://github.com/fpletz/puppet/radvd",
+  "project_page": "https://github.com/fpletz/puppet-radvd",
   "issues_url": "https://github.com/fpletz/puppet-radvd/issues",
   "description": "UNKONWN",
   "dependencies": [

@@ -5,10 +5,10 @@
   "summary": "Simple Puppet radvd management module",
   "license": "WTFPL",
   "source": "https://github.com/fpletz/puppet-radvd.git",
-  "project_page": "https://github.com/fpletz/puppet/radvd",
+  "project_page": "https://github.com/fpletz/puppet-radvd",
   "issues_url": "https://github.com/fpletz/puppet-radvd/issues",
   "description": "UNKONWN",
   "dependencies": [
-    {"name":"puppetlabs/concat","version_requirement":">= 1.0.0 < 3.0.0"}
+    {"name":"puppetlabs/concat","version_requirement":">= 1.0.0 < 5.0.0"}
   ]
 }

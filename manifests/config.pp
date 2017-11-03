@@ -1,8 +1,9 @@
 class radvd::config {
   concat {$radvd::conffile:
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+    owner        => 'root',
+    group        => 'root',
+    mode         => '0644',
+    validate_cmd => '/usr/sbin/radvd --configtest --config %',
   }
   concat::fragment { '01-puppet-header':
     target  => $radvd::conffile,

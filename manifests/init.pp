@@ -1,9 +1,10 @@
 class radvd (
-  $version = 'present',
+  $version    = 'present',
   $interfaces = {},
-  $enable = true,
-  $start = true,
-  $conffile = '/etc/radvd.conf',
+  $enable     = true,
+  $start      = true,
+  $managesvc  = true,
+  $conffile   = '/etc/radvd.conf',
 ) {
   class{'radvd::install': }
   class{'radvd::config': }

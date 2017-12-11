@@ -1,5 +1,9 @@
 class radvd::service {
-  $ensure = $radvd::start ? {true => running, default => stopped}
+  if $radvd::managesvc {
+    $ensure = $radvd::start
+  } else {
+    $ensure = undef
+  }
 
   service{'radvd':
     ensure => $ensure,

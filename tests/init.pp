@@ -20,6 +20,9 @@ node default {
         'AdvAutonomous' => 'on',
       },
     },
+    rasourceaddresses => [
+      'FE80::cafe:1',
+    ],
     rdnss    => {
       '2001:0DB8:2342:cafe::1' => {
         'AdvRDNSSLifetime' => 30,

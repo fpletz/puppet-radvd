@@ -1,6 +1,7 @@
 define radvd::interface (
   $options={},
   $prefixes={},
+  $rasourceaddresses=[],
   $rdnss={},
   $dnssl={},
   $routes={},

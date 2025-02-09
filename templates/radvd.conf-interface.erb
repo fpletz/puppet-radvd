@@ -13,6 +13,14 @@ interface <%= @name %>
   };
 
   <%- end -%>
+  <%- if @rasourceaddresses and not @rasourceaddresses.empty? -%>
+  AdvRASrcAddress {
+    <%- @rasourceaddresses.sort.each do |rasourceaddress| -%>
+    <%= rasourceaddress %>;
+    <%- end -%>
+  };
+
+  <%- end -%>
   <%- @rdnss.sort.each do |dns,popts| -%>
   RDNSS <%= dns %>
   {
